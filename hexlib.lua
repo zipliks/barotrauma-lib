@@ -64,7 +64,7 @@ function IAffliction.GiveAffliction(character, limb, identifier, strength)
     local affPrefab = AfflictionPrefab.Prefabs[identifier]
     if character == nil then return end
     if not limb then
-        limb = character.AnimController.GetLimb(LimbType.Body)
+        limb = LimbType.Body
     end
     character.CharacterHealth.ApplyAffliction(limb, affPrefab.Instantiate(strength))
     return true
